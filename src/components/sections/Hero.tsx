@@ -39,7 +39,7 @@ export function Hero() {
         {/* Banner Image with Multi-layer Masking */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.png" 
+            src="/hero.webp" 
             alt="LUNDRY.id Premium Service"
             fill
             sizes="100vw"

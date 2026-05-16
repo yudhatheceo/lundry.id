@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
     description: "Layanan laundry modern Jember, Surabaya, Malang. Pickup & Antar langsung dari HP.",
-    images: ["/logo.jpg"],
+    images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
     description: "Layanan laundry modern Jember, Surabaya, Malang.",
-    images: ["/logo.jpg"],
+    images: ["/logo.webp"],
   }
 };
 

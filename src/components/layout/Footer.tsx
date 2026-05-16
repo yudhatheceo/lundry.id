@@ -15,7 +15,7 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <div className="relative h-8 w-32">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.webp"
                   alt="LUNDRY.id"
                   fill
                   sizes="(max-width: 768px) 128px, 128px"

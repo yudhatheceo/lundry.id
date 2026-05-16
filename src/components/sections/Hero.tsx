@@ -117,11 +117,11 @@ export function Hero() {
                   <CardContent className="flex items-center justify-between p-6">
                     <div className="flex items-center gap-5">
                       <div className="h-16 w-16 rounded-2xl bg-secondary/5 border border-secondary/10 flex items-center justify-center transition-colors group-hover:bg-secondary group-hover:text-white">
-                        {React.cloneElement(card.icon as React.ReactElement, { className: "h-8 w-8 transition-colors" })}
+                        {React.cloneElement(card.icon as any, { className: "h-8 w-8 transition-colors" })}
                       </div>
                       <div>
                         <h4 className="font-bold text-primary text-xl leading-tight">{card.label}</h4>
-                        <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mt-1 opacity-60">{card.label}</p>
+                        <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mt-1 opacity-60">Layanan</p>
                       </div>
                     </div>
                     <div className="text-right">

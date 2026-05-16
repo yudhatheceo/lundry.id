@@ -73,12 +73,12 @@ export function Footer() {
                 <MapPin className="h-5 w-5 text-secondary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground leading-relaxed">
                   Head Office: <br />
-                  Jl. Kalimantan No. 12, Sumbersari, Jember, Jawa Timur
+                  Gumelar, Balung, Jember, Jawa Timur
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">0812-3456-7890</span>
+                <span className="text-sm text-muted-foreground">0811-3683-3131</span>-
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
@@ -90,7 +90,7 @@ export function Footer() {
 
         <div className="border-t border-border/30 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} LUNDRY.id. All rights reserved. Made with ❤️ by The Beacon.
+            © {new Date().getFullYear()} LUNDRY.id. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link href="#" className="text-xs text-muted-foreground hover:text-primary">Kebijakan Privasi</Link>
@@ -100,4 +100,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+  -}

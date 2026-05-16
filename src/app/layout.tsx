@@ -13,6 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lundry.id'),
   title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
   description: "Regular, Express, dan 3 Jam Kilat. Pickup & antar tersedia langsung dari HP kamu. Drop. Wash. Done.",
   openGraph: {

@@ -14,27 +14,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const SERVICES = [
   {
     title: "Laundry Kiloan",
-    description: "Regular, Express, dan 3 Jam Kilat. Cocok untuk pakaian harian.",
+    description: "Regular, Express, 3 Jam Kilat, dan Setrika Only. Untuk pakaian harian.",
     icon: <ShoppingBag className="h-8 w-8 text-secondary" />,
     items: ["Baju & Celana", "Handuk", "Seprai"],
   },
   {
     title: "Laundry Satuan",
-    description: "Perlakuan khusus untuk pakaian kesayangan Anda.",
+    description: "Penanganan khusus per item untuk pakaian formal dan sensitif.",
     icon: <Sparkles className="h-8 w-8 text-secondary" />,
-    items: ["Jas & Blazer", "Dress / Kebaya", "Jaket Kulit"],
+    items: ["Jas & Blazer", "Dress / Gaun", "Seragam Formal"],
   },
   {
-    title: "Cucian Besar",
-    description: "Bersihkan perlengkapan rumah tangga dengan mesin industri.",
+    title: "Paket Langganan",
+    description: "Bayar bulanan lebih hemat. Cocok untuk mahasiswa dan keluarga.",
     icon: <Box className="h-8 w-8 text-secondary" />,
-    items: ["Bed Cover", "Karpet", "Gorden"],
+    items: ["Paket 20kg", "Paket 40kg", "Paket 100kg"],
   },
   {
     title: "Layanan B2B",
-    description: "Partner laundry untuk bisnis Anda dengan harga kompetitif.",
+    description: "Kerja sama resmi dengan PT untuk bisnis (Hotel, Kos, Resto).",
     icon: <Building2 className="h-8 w-8 text-secondary" />,
-    items: ["Hotel & Kost", "Restoran / Kafe", "Klinik / Gym"],
+    items: ["Hotel & Kost", "Restoran / Kafe", "Kantor / Kampus"],
   },
 ];
 

@@ -57,11 +57,14 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-primary mb-6">Area Layanan</h4>
             <ul className="space-y-4">
-              {["Jember", "Surabaya", "Malang", "Sidoarjo", "Gresik"].map((item) => (
+              {["Jember (Pusat)"].map((item) => (
                 <li key={item}>
                   <span className="text-sm text-muted-foreground">{item}</span>
                 </li>
               ))}
+              <li>
+                <span className="text-[10px] font-black text-secondary uppercase tracking-widest italic">Ekspansi Segera</span>
+              </li>
             </ul>
           </div>
 
@@ -78,7 +81,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">0811-3683-3131</span>
+                <span className="text-sm text-muted-foreground">0811-368-3131</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
@@ -89,8 +92,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/30 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} LUNDRY.id. All rights reserved.
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            © {new Date().getFullYear()} LUNDRY.id — Bagian dari <a href="https://beacon.co.id" target="_blank" className="font-bold hover:text-primary transition-colors underline decoration-secondary/30 underline-offset-4">The Beacon</a><br />
+            PT NAWASENA ADIKARYA PRATAMA. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link href="#" className="text-xs text-muted-foreground hover:text-primary">Kebijakan Privasi</Link>

@@ -60,7 +60,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-8"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-              Laundry Modern #1 Jember
+              Opening Soon — Jember (Pusat)
             </motion.div>
 
             <motion.h1
@@ -68,8 +68,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               className="font-heading text-4xl font-black tracking-tight text-white sm:text-7xl leading-[1.1] drop-shadow-lg"
             >
-              Cuci & Setrika <br />
-              <span className="text-secondary">Tanpa Ribet</span>
+              Laundry Modern <br />
+              <span className="text-secondary">Segera Hadir</span>
             </motion.h1>
             
             <motion.p
@@ -78,8 +78,9 @@ export function Hero() {
               transition={{ delay: 0.2 }}
               className="mt-6 text-base md:text-lg text-white/80 max-w-md leading-relaxed font-medium"
             >
-              Eksperiens laundry terbaik dengan standar kualitas hotel. 
-              Bersih, Wangi, & Cepat sampai di depan pintu Anda.
+              Kami sedang menyiapkan ekosistem laundry terbaik dengan standar hotel khusus untuk area Kampus Mastrip & Jember Kota.
+              <br className="hidden md:block" />
+              <span className="text-secondary font-bold">Daftar sekarang untuk promo launching!</span>
             </motion.p>
 
             <motion.div
@@ -88,13 +89,20 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
-              <Button size="lg" className="h-14 rounded-full font-bold text-sm px-10 bg-secondary hover:bg-secondary/90 text-white shadow-md border-none transition-all hover:scale-[1.02] active:scale-95">
-                Pesan Sekarang
-                <ShoppingBag className="ml-2 h-4 w-4" />
+              <Button 
+                size="lg" 
+                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                className="h-14 rounded-full font-bold text-sm px-10 bg-secondary hover:bg-secondary/90 text-white shadow-md border-none transition-all hover:scale-[1.02] active:scale-95"
+              >
+                Dapatkan Akses Awal
+                <Zap className="ml-2 h-4 w-4 fill-white" />
               </Button>
-              <Button size="lg" className="h-14 rounded-full font-bold text-sm px-10 bg-[#FFB703] hover:bg-[#E5A503] text-primary shadow-md border-none transition-all hover:scale-[1.02] active:scale-95">
-                Jadi Partner
-                <Handshake className="ml-2 h-4 w-4" />
+              <Button 
+                size="lg" 
+                onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+ingin+tanya+kapan+bukanya", "_blank")}
+                className="h-14 rounded-full font-bold text-sm px-10 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white shadow-md border border-white/20 transition-all hover:scale-[1.02] active:scale-95"
+              >
+                Tanya via WA
               </Button>
             </motion.div>
           </div>

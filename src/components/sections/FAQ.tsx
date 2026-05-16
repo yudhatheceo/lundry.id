@@ -12,24 +12,28 @@ import { MessageCircle } from "lucide-react";
 
 const FAQS = [
   {
-    q: "Berapa minimal laundry di LUNDRY.id?",
-    a: "Untuk layanan kiloan, minimal laundry adalah 3kg. Jika kurang dari itu, tetap akan dikenakan tarif minimal 3kg.",
+    q: "Bagaimana cara memesan?",
+    a: "Cukup chat WhatsApp kami. Bot kami akan memandu kamu mulai dari pilih layanan, jadwal pickup, sampai konfirmasi harga. Tidak perlu install aplikasi apapun.",
   },
   {
-    q: "Apakah ada layanan pickup dan antar?",
-    a: "Ya! Kami menyediakan layanan antar-jemput langsung ke lokasi Anda. Anda bisa mengatur jadwal pickup melalui WhatsApp.",
+    q: "Berapa biaya antar-jemput?",
+    a: "Gratis untuk radius 3km dari outlet kami di Jember. Di luar itu dikenakan Rp2.000/km. Konfirmasi ongkir otomatis muncul saat kamu order via WA.",
   },
   {
-    q: "Area mana saja yang dijangkau LUNDRY.id?",
-    a: "Saat ini kami melayani area Jember, Surabaya, Malang, dan Sidoarjo. Cek section Lokasi untuk detail lebih lanjut.",
+    q: "Apakah ada paket langganan?",
+    a: "Ada! Mulai dari Paket Mahasiswa 20kg/bulan. Lebih hemat dan tidak perlu order satu-satu setiap minggu.",
   },
   {
-    q: "Berapa lama proses pengerjaannya?",
-    a: "Kami punya 3 paket: Regular (2-3 hari), Express (1 hari), dan 3 Jam Kilat (khusus cucian kiloan).",
+    q: "Bagaimana kalau pakaian saya rusak atau hilang?",
+    a: "Kami bertanggung jawab penuh. Setiap pakaian dicatat dan difoto saat masuk. Ada sistem klaim yang bisa kamu ajukan langsung via WhatsApp.",
   },
   {
-    q: "Apakah bisa untuk laundry hotel atau kafe?",
-    a: "Tentu! Kami memiliki layanan B2B khusus untuk bisnis dengan harga kontrak yang lebih kompetitif.",
+    q: "Metode pembayaran apa yang diterima?",
+    a: "QRIS (semua e-wallet), transfer bank, dan tunai saat pickup/delivery. Invoice dikirim otomatis via WhatsApp.",
+  },
+  {
+    q: "Apakah bisa untuk kebutuhan bisnis (hotel, kos, dll)?",
+    a: "Bisa. Kami melayani B2B dengan harga kontrak, invoicing bulanan, dan bisa tanda tangan MOU formal karena kami beroperasi sebagai PT.",
   },
 ];
 
@@ -70,7 +74,11 @@ export function FAQ() {
             Tinggal klik, kurir kami jemput, dan kamu tinggal terima bersih.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto h-14 px-10 rounded-full font-bold text-lg gap-3 bg-[#25D366] hover:bg-[#128C7E]">
+            <Button 
+              size="lg" 
+              onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+ingin+order+laundry", "_blank")}
+              className="w-full sm:w-auto h-14 px-10 rounded-full font-bold text-lg gap-3 bg-[#25D366] hover:bg-[#128C7E]"
+            >
               <MessageCircle className="h-6 w-6" />
               Pesan Sekarang
             </Button>

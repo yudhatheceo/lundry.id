@@ -9,6 +9,7 @@ import { TrustBadges } from "@/components/sections/TrustBadges";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { Partnership } from "@/components/sections/Partnership";
+import { Products } from "@/components/sections/Products";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/layout/Footer";
 
@@ -17,11 +18,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <Testimonials />
       <Services />
+      <Products />
       <Pricing />
       <HowItWorks />
       <TrustBadges />
-      <Testimonials />
       <ServiceAreas />
       <Partnership />
       <FAQ />

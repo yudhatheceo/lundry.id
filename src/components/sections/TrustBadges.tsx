@@ -5,33 +5,35 @@ import { motion } from "framer-motion";
 import { 
   ShieldCheck, 
   Clock, 
-  UserCheck, 
-  Award,
-  Star
+  Bell, 
+  Truck,
+  Sparkles,
+  CheckCircle2,
+  Tag
 } from "lucide-react";
 
 const METRICS = [
-  { label: "Pelanggan Puas", value: "1.200+", icon: <UserCheck className="h-5 w-5" /> },
-  { label: "Rating Google", value: "4.9/5", icon: <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" /> },
-  { label: "Cucian Selesai", value: "10rb+ Kg", icon: <Award className="h-5 w-5" /> },
-  { label: "Area Layanan", value: "5 Kota", icon: <ShieldCheck className="h-5 w-5" /> },
+  { label: "Notifikasi Real-Time", value: "Live", icon: <Bell className="h-5 w-5" /> },
+  { label: "Standar Kualitas", value: "Hotel", icon: <ShieldCheck className="h-5 w-5" /> },
+  { label: "Pickup & Antar", value: "Pasti", icon: <Truck className="h-5 w-5" /> },
+  { label: "Custom Parfum", value: "Gratis", icon: <Sparkles className="h-5 w-5" /> },
 ];
 
 const FEATURES = [
   {
-    title: "Higienis & Bersih",
-    desc: "Proses pencucian standar tinggi dan detergent ramah lingkungan.",
-    icon: <ShieldCheck className="h-6 w-6" />,
+    title: "Sistem Otomatis 24 Jam",
+    desc: "Order masuk, konfirmasi, status, dan invoice — semua otomatis via WhatsApp.",
+    icon: <Bell className="h-6 w-6" />,
   },
   {
-    title: "Tepat Waktu",
-    desc: "Jaminan jemput dan antar sesuai estimasi yang dijanjikan.",
+    title: "Garansi Kepastian Waktu",
+    desc: "Jadwal pickup & antar yang terencana (08:00-10:00 & 15:00-17:00).",
     icon: <Clock className="h-6 w-6" />,
   },
   {
-    title: "Kurir Ramah",
-    desc: "Partner kurir kami terlatih untuk melayani Anda dengan senyum.",
-    icon: <UserCheck className="h-6 w-6" />,
+    title: "Mitra Bisnis Resmi",
+    desc: "Beroperasi di bawah PT NAWASENA ADIKARYA PRATAMA. Siap kerja sama formal B2B.",
+    icon: <CheckCircle2 className="h-6 w-6" />,
   },
 ];
 

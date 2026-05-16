@@ -7,21 +7,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const AREAS = [
-  "Jember", "Surabaya", "Malang", "Sidoarjo", "Gresik", "Kediri"
+  "Jember (Aktif)"
 ];
 
 const OUTLETS = [
   {
-    name: "LUNDRY.id Jember Kota",
-    address: "Jl. Kalimantan No. 12, Sumbersari, Jember",
-    hours: "07:00 - 21:00",
-    status: "Buka",
-  },
-  {
-    name: "LUNDRY.id Surabaya Timur",
-    address: "Jl. Manyar Kertoarjo No. 45, Surabaya",
-    hours: "07:00 - 22:00",
-    status: "Buka",
+    name: "LUNDRY.id — Jember (Pusat)",
+    address: "Area Kampus Mastrip, Jember — alamat lengkap segera diumumkan",
+    hours: "07:00 – 21:00",
+    status: "Segera Buka",
   },
 ];
 
@@ -36,7 +30,9 @@ export function ServiceAreas() {
               Area Layanan
             </h2>
             <p className="text-muted-foreground mb-8">
-              Kami hadir di berbagai kota besar di Jawa Timur untuk memberikan layanan terbaik bagi Anda.
+              Saat ini kami fokus melayani area Jember dengan sistem yang terintegrasi.
+              <br /><br />
+              <span className="text-primary font-bold">Ekspansi berikutnya:</span> Segera menyusul — pantau terus WhatsApp kami.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {AREAS.map((area) => (

@@ -15,19 +15,19 @@ const PRICING_DATA = {
   ],
   satuan: [
     { name: "Jas / Blazer", price: "35rb", unit: "/pcs", info: "Pembersihan Professional" },
-    { name: "Sepatu (Deep Cleaning)", price: "45rb", unit: "/pasang", info: "Free Parfum" },
-    { name: "Tas (Medium)", price: "50rb", unit: "/pcs", info: "Leather Care" },
     { name: "Gaun / Dress", price: "60rb", unit: "/pcs", info: "Bahan Sensitif" },
+    { name: "Seragam Formal", price: "25rb", unit: "/pcs", info: "Presisi & Rapi" },
   ],
-  dryclean: [
-    { name: "Kebaya Premium", price: "75rb", unit: "/pcs", info: "Dry Cleaning" },
-    { name: "Jas Set", price: "85rb", unit: "/set", info: "Cuci Kering" },
-    { name: "Karpet / m2", price: "15rb", unit: "/m2", info: "Pembersihan Dalam" },
+  langganan: [
+    { name: "Paket Mhs 20kg", price: "140rb", unit: "/bulan", info: "Hemat 12.5% dari Regular" },
+    { name: "Paket Keluarga 40kg", price: "260rb", unit: "/bulan", info: "Hemat 18%" },
+    { name: "Paket Kos 100kg", price: "580rb", unit: "/bulan", info: "Prioritas antar-jemput" },
   ],
   b2b: [
-    { name: "Paket Hotel", price: "Kontak", unit: "", info: "Sprei, Handuk, Selimut" },
-    { name: "Paket Kos-kosan", price: "Kontak", unit: "", info: "Layanan Langganan" },
-    { name: "Paket Restoran", price: "Kontak", unit: "", info: "Seragam, Taplak Meja" },
+    { name: "Paket Hotel", price: "Hubungi", unit: "", info: "Sprei, Handuk, Selimut" },
+    { name: "Paket Kos-kosan", price: "Hubungi", unit: "", info: "Invoicing Bulanan" },
+    { name: "Paket Restoran", price: "Hubungi", unit: "", info: "Seragam, Taplak Meja" },
+    { name: "Institusi / Kantor", price: "Hubungi", unit: "", info: "Kerja Sama MOU PT" },
   ],
 };
 
@@ -49,7 +49,7 @@ export function Pricing() {
             <TabsList className="bg-white/50 p-1 border h-auto flex-wrap justify-center sm:flex-nowrap">
               <TabsTrigger value="kiloan" className="px-6 py-2.5 data-[state=active]:bg-primary data-[state=active]:text-white">Kiloan</TabsTrigger>
               <TabsTrigger value="satuan" className="px-6 py-2.5 data-[state=active]:bg-primary data-[state=active]:text-white">Satuan</TabsTrigger>
-              <TabsTrigger value="dryclean" className="px-6 py-2.5 data-[state=active]:bg-primary data-[state=active]:text-white">Dry Clean</TabsTrigger>
+              <TabsTrigger value="langganan" className="px-6 py-2.5 data-[state=active]:bg-primary data-[state=active]:text-white">Langganan</TabsTrigger>
               <TabsTrigger value="b2b" className="px-6 py-2.5 data-[state=active]:bg-primary data-[state=active]:text-white">B2B</TabsTrigger>
             </TabsList>
           </div>
@@ -83,12 +83,22 @@ export function Pricing() {
           ))}
         </Tabs>
 
+        <div className="mt-8 text-center">
+          <p className="text-xs text-muted-foreground italic">
+            *Antar-jemput gratis untuk radius 3km dari outlet · Di luar radius: Rp2.000/km
+          </p>
+        </div>
+
         <div className="mt-16 flex flex-col items-center justify-center space-y-6">
           <div className="text-center">
             <p className="text-sm font-medium text-muted-foreground">Butuh jemputan sekarang?</p>
             <h3 className="text-xl font-bold text-primary">Klik tombol di bawah ini</h3>
           </div>
-          <Button size="lg" className="h-14 px-10 rounded-full font-bold text-lg gap-3 bg-[#25D366] hover:bg-[#128C7E] shadow-xl shadow-green-200">
+          <Button 
+            size="lg" 
+            onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+ingin+order+laundry", "_blank")}
+            className="h-14 px-10 rounded-full font-bold text-lg gap-3 bg-[#25D366] hover:bg-[#128C7E] shadow-xl shadow-green-200"
+          >
             <MessageCircle className="h-6 w-6" />
             Pesan via WhatsApp
           </Button>

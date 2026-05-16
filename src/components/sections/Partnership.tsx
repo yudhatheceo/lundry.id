@@ -2,35 +2,45 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Handshake, Store, Factory, Users } from "lucide-react";
+import { Handshake, Store, Factory, Package, Gift, Trophy, Smartphone, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const PARTNER_TYPES = [
   {
-    title: "Franchise Outlet",
-    desc: "Buka outlet LUNDRY.id dengan sistem manajemen digital lengkap.",
-    benefits: ["Full Branding & Support", "Sistem POS Terintegrasi", "SOP & Training Karyawan"],
-    icon: <Store className="h-7 w-7 text-secondary" />,
-  },
-  {
     title: "Drop Point",
-    desc: "Terima cucian di toko/rumah Anda dan dapatkan komisi instan.",
-    benefits: ["Tanpa Modal Awal", "Komisi s/d 20% / Order", "Pickup Rutin dari Kami"],
+    desc: "Ubah teras rumah jadi mesin uang tanpa modal. Cukup terima cucian, kami yang jemput.",
+    benefits: ["Modal 0 Rupiah", "Bonus Cash & Reward", "Marketing Kit Lengkap"],
     icon: <Handshake className="h-7 w-7 text-secondary" />,
+    cta: "Daftar Jadi Mitra",
   },
   {
     title: "Corporate B2B",
-    desc: "Solusi laundry untuk Hotel, Restoran, dan instansi besar.",
-    benefits: ["Harga Khusus Volume Besar", "Prioritas Layanan Express", "Invoicing & Report Bulanan"],
+    desc: "Kerja sama resmi dengan PT untuk Hotel, Restoran, dan institusi besar.",
+    benefits: ["Harga Kontrak Khusus", "Invoicing Bulanan", "MOU Formal Ready"],
     icon: <Factory className="h-7 w-7 text-secondary" />,
+    cta: "Hubungi Kami",
   },
   {
     title: "Reseller Chemical",
-    desc: "Distribusi produk pewangi & deterjen premium LUNDRY.id.",
-    benefits: ["Produk Eksklusif Jember", "Margin Keuntungan Tinggi", "Marketing Kit Disediakan"],
-    icon: <Users className="h-7 w-7 text-secondary" />,
+    desc: "Distribusi produk pewangi & deterjen premium yang kami gunakan sendiri.",
+    benefits: ["Margin Keuntungan Tinggi", "Social Proof Terjamin", "Marketing Support"],
+    icon: <Package className="h-7 w-7 text-secondary" />,
+    cta: "Cek Katalog",
   },
+  {
+    title: "Franchise Outlet",
+    desc: "Sistem manajemen digital lengkap untuk Anda yang ingin investasi lebih serius.",
+    benefits: ["Coming Soon - Phase 3", "Support Operasional", "Ecosystem POS Digital"],
+    icon: <Store className="h-7 w-7 text-secondary" />,
+    cta: "Pantau Progress",
+  },
+];
+
+const DROP_POINT_REWARDS = [
+  { target: "500kg/bulan", reward: "Bonus Tunai Rp250.000", icon: <Gift className="h-4 w-4" /> },
+  { target: "1.000kg/bulan", reward: "Smartphone Baru", icon: <Smartphone className="h-4 w-4" /> },
+  { target: "Kumulatif", reward: "Sepeda Listrik Eksklusif", icon: <Trophy className="h-4 w-4" /> },
 ];
 
 export function Partnership() {
@@ -77,7 +87,7 @@ export function Partnership() {
                     {type.desc}
                   </p>
                   
-                  {/* Benefit List - The 'Informative' Part */}
+                  {/* Benefit List */}
                   <ul className="space-y-3 mb-8">
                     {type.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-primary/70">
@@ -87,8 +97,28 @@ export function Partnership() {
                     ))}
                   </ul>
 
+                  {/* Drop Point Specific Rewards */}
+                  {type.title === "Drop Point" && (
+                    <div className="mt-2 mb-8 p-4 rounded-2xl bg-secondary/5 border border-secondary/10">
+                      <p className="text-[9px] font-black uppercase tracking-widest text-secondary mb-3 flex items-center gap-2">
+                        <Zap className="h-3 w-3 fill-secondary" /> Potential Rewards
+                      </p>
+                      <div className="space-y-2">
+                        {DROP_POINT_REWARDS.map((r, i) => (
+                          <div key={i} className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <span className="text-secondary">{r.icon}</span>
+                              <span className="text-[9px] font-medium text-primary/60">{r.target}</span>
+                            </div>
+                            <span className="text-[10px] font-bold text-primary">{r.reward}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <Button variant="link" className="mt-auto p-0 h-auto font-black text-[10px] uppercase tracking-widest text-secondary justify-start hover:text-primary transition-all">
-                    Detail Kerjasama →
+                    {type.cta} →
                   </Button>
                 </CardContent>
               </Card>
@@ -113,7 +143,11 @@ export function Partnership() {
                 Tim ekspansi kami siap membantu Anda menganalisis potensi pasar di lokasi Anda dan memilih model kerjasama terbaik.
               </p>
             </div>
-            <Button size="lg" className="bg-[#FFB703] hover:bg-[#E5A503] text-primary font-black px-12 h-14 rounded-full shadow-xl shadow-black/10 transition-transform hover:scale-105 active:scale-95">
+            <Button 
+              size="lg" 
+              onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+ingin+tanya+kemitraan", "_blank")}
+              className="bg-[#FFB703] hover:bg-[#E5A503] text-primary font-black px-12 h-14 rounded-full shadow-xl shadow-black/10 transition-transform hover:scale-105 active:scale-95"
+            >
               Daftar Jadi Partner
             </Button>
           </div>

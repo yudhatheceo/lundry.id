@@ -70,7 +70,7 @@ export function Partnership() {
               <Card className="h-full border-none shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-2 rounded-3xl bg-white overflow-hidden group">
                 <CardContent className="p-6 md:p-8 flex flex-col h-full">
                   <div className="mb-6 h-14 w-14 rounded-2xl bg-secondary/5 border border-secondary/10 flex items-center justify-center transition-colors group-hover:bg-secondary group-hover:text-white">
-                    {React.cloneElement(type.icon as React.ReactElement, { className: "h-7 w-7 transition-colors" })}
+                    {React.cloneElement(type.icon as any, { className: "h-7 w-7 transition-colors" })}
                   </div>
                   <h3 className="text-xl font-black text-primary mb-3 leading-tight">{type.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-6">

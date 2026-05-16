@@ -1,12 +1,4 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "lundryid"
-compatibility_date = "2024-11-01"
+compatibility_date = "2024-11-18"
 compatibility_flags = ["nodejs_compat"]
-main = ".vercel/output/static/_worker.js"
-
-[assets]
-directory = ".vercel/output/static"
-binding = "ASSETS"
-
-[vars]
-# Add environment variables here

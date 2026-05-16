@@ -44,3 +44,8 @@ next-env.d.ts
 .cloudflare
 .vercel/output
 .dev.vars
+
+# docs
+/rdp.md
+/AGENTS.md
+/CLAUDE.md

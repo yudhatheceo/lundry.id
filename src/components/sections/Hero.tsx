@@ -43,7 +43,7 @@ export function Hero() {
             alt="LUNDRY.id Premium Service"
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           {/* Layered Overlays for depth and readability */}

@@ -1,23 +1,26 @@
-# LUNDRY.id — Premium Modern Laundry Ecosystem 🧺✨
+# LUNDRY.id — Modern Laundry Ecosystem 🧺✨
 
-LUNDRY.id adalah gerbang utama menuju ekosistem laundry modern yang dirancang khusus untuk kenyamanan pelanggan dan efisiensi merchant. Project ini bukan sekadar landing page, melainkan pondasi dari sistem POS & ERP laundry yang komprehensif.
+LUNDRY.id adalah gerbang utama menuju ekosistem laundry modern yang dirancang khusus untuk kenyamanan pelanggan dan efisiensi merchant. Project ini merupakan landing page strategis dalam fase **Pre-launch** untuk area Jember.
 
-Built with ❤️ by **The Beacon Team**.
+Built with ❤️ by **The Beacon Team** — Bagian dari **PT NAWASENA ADIKARYA PRATAMA**.
 
 ---
 
-## 💎 Visual Excellence & UX
-Project ini telah melalui proses audit UI/UX mendalam untuk mencapai standar **High-End Aesthetics**:
-- **Cinematic Hero Experience:** Penggunaan mask visual yang dramatis dan fokus pada wajah model (Optimized View).
-- **Dynamic Experience Flow:** Alur kerja layanan (How It Works) yang interaktif dan informatif.
-- **Mobile-First Carousel:** Testimonial dengan sistem *peek-a-boo* untuk engagement user HP yang lebih tinggi.
-- **Micro-Animations:** Transisi halus menggunakan Framer Motion untuk kesan aplikasi premium.
+## 🚀 Status Saat Ini: Pre-Launch (Jember)
+Landing page saat ini difokuskan sebagai **Announcement & Conversion Engine** sebelum pembukaan outlet fisik pertama di area Kampus Mastrip, Jember.
 
-## 🚀 Fitur Unggulan Saat Ini
-- **Dual-CTA Strategy:** Fokus pada konversi "Pesan Sekarang" dan ekspansi "Jadi Partner".
-- **Real-Time Pricing Grid:** Tampilan harga Regular, Express, dan Kilat yang responsif.
-- **SEO Optimized Layout:** Heading structure dan metadata yang ramah mesin pencari.
-- **Edge Deployment Ready:** Berjalan di infrastruktur global Cloudflare untuk latency mendekati nol.
+### Fitur Unggulan Terkini:
+- **Early Access Waitlist:** Sistem pendaftaran antrean awal dengan insentif *Early Bird Perks* (Voucher 50% & Free Upgrade Parfum).
+- **Coming Soon Announcement:** Hero section yang dirancang khusus untuk membangun antisipasi di pasar lokal Jember.
+- **Service Specialization:** Penawaran layanan Kiloan, Satuan, Paket Langganan Mahasiswa/Keluarga, dan Layanan B2B.
+- **Chemical & Supply Shop:** Seksi produk untuk distribusi deterjen dan pewangi premium yang digunakan oleh LUNDRY.id.
+- **WhatsApp Unified CTA:** Semua tombol konversi terintegrasi ke WhatsApp Business `628113683131`.
+- **Partnership Ecosystem:** Penawaran kemitraan Drop Point, Corporate B2B, dan Reseller Chemical.
+
+## 💎 Visual & UX Refinement
+- **Frame-Inside-Frame Design:** Redesign seksi Waitlist untuk estetika yang lebih presisi, bersih, dan premium.
+- **Localized Content:** Seluruh aset teks telah disesuaikan dengan realita bisnis di Jember (Hapus data fiktif).
+- **Responsive Experience:** Optimasi penuh untuk pengguna smartphone (Mahasiswa & Karyawan).
 
 ## 🛠️ Stack Teknologi (Cutting-Edge)
 - **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
@@ -31,47 +34,34 @@ Project ini telah melalui proses audit UI/UX mendalam untuk mencapai standar **H
 
 ## 📈 Roadmap Pengembangan
 
-### 🎯 Fase Selanjutnya (Current Focus)
-- **Content Optimization:** Penyesuaian seluruh aset teks dan gambar dengan produk/layanan riil LUNDRY.id.
-- **Service Refinement:** Detail spesifik untuk setiap kategori layanan (Kiloan, Satuan, Karpet, dsb).
+### 🎯 Fase 1 (Current)
+- Launching Landing Page & Pengumpulan Database Waitlist.
+- Kampanye "Early Bird Perks" untuk area Jember.
+- Validasi minat produk Chemical LUNDRY.id.
 
-### 🛠️ Fase Pengembangan Sistem (POS & ERP)
-1. **Customer Portal:** Sistem login WhatsApp/OTP dan pelacakan order real-time.
-2. **Merchant POS:** Antarmuka input transaksi staf, cetak struk thermal, dan integrasi timbangan IoT.
-3. **Enterprise ERP:** Manajemen stok chemical, laporan laba-rugi multi-outlet, dan modul kemitraan B2B.
+### 🛠️ Fase 2 (System Integration)
+1. **Customer Portal:** Tracking order real-time via WhatsApp.
+2. **Merchant POS:** Sistem manajemen outlet terintegrasi.
+3. **Partnership Dashboard:** Panel manajemen untuk mitra Drop Point.
 
 ---
 
 ## ☁️ Deployment Guide (Cloudflare Pages)
-
-Untuk memastikan aplikasi berjalan sempurna di Cloudflare, gunakan pengaturan berikut:
-
 - **Build Command:** `npx @cloudflare/next-on-pages@latest`
 - **Build Output Directory:** `.vercel/output/static`
-- **Compatibility Date:** `2025-05-16` (atau terbaru)
 - **Compatibility Flags:** `nodejs_compat` (Wajib diaktifkan)
 
 ---
 
 ## 💻 Cara Menjalankan Project Secara Lokal
-
-1. **Clone & Install:**
-   ```bash
-   npm install
-   ```
-2. **Development:**
-   ```bash
-   npm run dev
-   ```
-3. **Build:**
-   ```bash
-   npm run build
-   ```
+1. **Clone & Install:** `npm install`
+2. **Development:** `npm run dev`
+3. **Production Build:** `npm run build`
 
 ---
 
 ## 📄 Lisensi & Hak Cipta
-Project ini dikembangkan secara eksklusif oleh **The Beacon** untuk **LUNDRY.id**. Seluruh aset desain dan kode dilindungi oleh hak cipta.
+Project ini dikembangkan secara eksklusif oleh **The Beacon** untuk **LUNDRY.id**. Seluruh aset desain dan kode dilindungi oleh hak cipta di bawah **PT NAWASENA ADIKARYA PRATAMA**.
 
 ---
 *Elevating the laundry experience to the next level.* 🚀🏆

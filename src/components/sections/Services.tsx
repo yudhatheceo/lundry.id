@@ -70,8 +70,8 @@ export function Services() {
             >
               <Card className="h-full border-none bg-[#fbfdff] shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group rounded-2xl md:rounded-3xl overflow-hidden">
                 <CardContent className="p-5 md:p-8 flex flex-col h-full">
-                  <div className="mb-4 md:mb-6 inline-flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl md:rounded-2xl bg-white shadow-sm border border-secondary/5 group-hover:bg-secondary group-hover:text-white transition-colors">
-                    {React.cloneElement(service.icon as React.ReactElement, { className: "h-6 w-6 md:h-8 md:w-8" })}
+                  <div className="mb-4 h-12 w-12 md:h-16 md:w-16 rounded-2xl bg-secondary/5 border border-secondary/10 flex items-center justify-center transition-colors group-hover:bg-secondary group-hover:text-white">
+                    {React.cloneElement(service.icon as any, { className: "h-6 w-6 md:h-8 md:w-8 transition-colors" })}
                   </div>
                   
                   <h3 className="mb-2 text-base md:text-xl font-black text-primary group-hover:text-secondary transition-colors">

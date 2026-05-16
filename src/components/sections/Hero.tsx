@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shirt, Timer, Zap, Star, ShieldCheck } from "lucide-react";
+import { Shirt, Timer, Zap, Star, ShieldCheck, ShoppingBag, Handshake } from "lucide-react";
 
 const PRICING_CARDS = [
   {
@@ -33,146 +33,123 @@ const PRICING_CARDS = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-10 pb-20 md:pt-16 md:pb-32">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] translate-x-1/3 -translate-y-1/3 rounded-full bg-secondary/5 blur-3xl" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] -translate-x-1/4 translate-y-1/4 rounded-full bg-primary/5 blur-3xl" />
+    <section className="relative overflow-hidden bg-white">
+      {/* Top Banner: Cinematic Overlay Experience */}
+      <div className="relative h-[550px] md:h-[650px] w-full flex items-center">
+        {/* Banner Image with Multi-layer Masking */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero.png" 
+            alt="LUNDRY.id Premium Service"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          {/* Layered Overlays for depth and readability */}
+          <div className="absolute inset-0 bg-primary/40" /> {/* Base tint */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+        </div>
 
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center lg:flex-row lg:gap-16">
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-2xl">
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider mb-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-8"
             >
-              <Zap className="h-3 w-3 fill-secondary" />
+              <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
               Laundry Modern #1 Jember
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="font-heading text-5xl font-black tracking-tight text-primary sm:text-6xl lg:text-7xl leading-[1.1]"
+              className="font-heading text-4xl font-black tracking-tight text-white sm:text-7xl leading-[1.1] drop-shadow-lg"
             >
               Cuci & Setrika <br />
               <span className="text-secondary">Tanpa Ribet</span>
             </motion.h1>
             
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-8 text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mt-6 text-base md:text-lg text-white/80 max-w-md leading-relaxed font-medium"
             >
-              Regular, Express, dan 3 Jam Kilat. <br className="hidden sm:block" />
-              Pickup & antar tersedia langsung dari HP kamu. <br className="hidden sm:block" />
-              <span className="font-bold text-primary italic">“Drop. Wash. Done.”</span>
+              Eksperiens laundry terbaik dengan standar kualitas hotel. 
+              Bersih, Wangi, & Cepat sampai di depan pintu Anda.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+              transition={{ delay: 0.3 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
             >
-              <Button size="lg" className="w-full sm:w-auto h-14 rounded-full font-bold text-lg px-10 shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+              <Button size="lg" className="h-14 rounded-full font-bold text-sm px-10 bg-secondary hover:bg-secondary/90 text-white shadow-md border-none transition-all hover:scale-[1.02] active:scale-95">
                 Pesan Sekarang
+                <ShoppingBag className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 rounded-full font-bold text-lg px-10 border-2 hover:bg-soft-white transition-colors">
-                Cek Harga
+              <Button size="lg" className="h-14 rounded-full font-bold text-sm px-10 bg-[#FFB703] hover:bg-[#E5A503] text-primary shadow-md border-none transition-all hover:scale-[1.02] active:scale-95">
+                Jadi Partner
+                <Handshake className="ml-2 h-4 w-4" />
               </Button>
-            </motion.div>
-
-            {/* Quick Metrics */}
-            <motion.div
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               transition={{ delay: 0.4 }}
-               className="mt-12 flex items-center justify-center lg:justify-start gap-8"
-            >
-               <div>
-                  <p className="text-2xl font-black text-primary">1.2k+</p>
-                  <p className="text-xs text-muted-foreground uppercase font-bold">Pelanggan</p>
-               </div>
-               <div className="w-px h-8 bg-border" />
-               <div>
-                  <p className="text-2xl font-black text-primary">4.9/5</p>
-                  <div className="flex items-center gap-1">
-                     <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                     <p className="text-xs text-muted-foreground uppercase font-bold">Rating Google</p>
-                  </div>
-               </div>
             </motion.div>
           </div>
+        </div>
+      </div>
 
-          {/* Image & Cards Fold */}
-          <div className="relative mt-20 flex-1 lg:mt-0 w-full max-w-2xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative aspect-[4/5] w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0"
-            >
-              {/* Image Frame with specialized rounding and shadow */}
-              <div className="absolute -inset-4 bg-soft-white rounded-[40px] -z-10" />
-              <div className="relative h-full w-full overflow-hidden rounded-[32px] shadow-2xl ring-1 ring-black/5">
-                <Image
-                  src="/hero.png" 
-                  alt="LUNDRY.id Staff"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-                  className="object-cover transition-transform duration-700 hover:scale-110"
-                  priority
-                />
-              </div>
-
-              {/* Trust Badge overlay */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-                className="absolute -left-6 top-10 bg-white p-4 rounded-2xl shadow-xl z-30 hidden sm:flex items-center gap-3 border border-border/50"
+      {/* Transition Area: Pricing Cards (Refined Palette) */}
+      <div className="bg-[#f8fbff] py-12 pb-20 relative -mt-8 rounded-t-[40px] z-20 shadow-[0_-20px_50px_rgba(20,33,61,0.15)] md:rounded-none md:mt-0 md:shadow-none border-t border-white/50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 max-w-5xl mx-auto">
+            {PRICING_CARDS.map((card, idx) => (
+              <motion.div
+                key={card.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
               >
-                <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <ShieldCheck className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-primary leading-tight">Terjamin Higienis</p>
-                  <p className="text-[10px] text-muted-foreground">Proses Standar Hotel</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Floating Pricing Cards - Re-arranged for better 'tata letak' */}
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:absolute lg:bottom-10 lg:-left-20 lg:right-auto lg:w-[450px] lg:mt-0 z-40">
-              {PRICING_CARDS.map((card, idx) => (
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
-                >
-                  <Card className="border-none shadow-xl ring-1 ring-border/30 bg-white/95 backdrop-blur-sm hover:-translate-y-1 transition-all">
-                    <CardContent className="flex items-center gap-4 p-4 lg:flex-col lg:items-center lg:text-center lg:gap-2">
-                      <div className="rounded-xl bg-soft-white p-2 shadow-inner">
-                        {card.icon}
+                <Card className="border-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white hover:shadow-[0_15px_45px_rgb(0,0,0,0.08)] transition-all hover:-translate-y-2 rounded-3xl overflow-hidden group">
+                  <CardContent className="flex items-center justify-between p-6">
+                    <div className="flex items-center gap-5">
+                      <div className="h-16 w-16 rounded-2xl bg-secondary/5 border border-secondary/10 flex items-center justify-center transition-colors group-hover:bg-secondary group-hover:text-white">
+                        {React.cloneElement(card.icon as React.ReactElement, { className: "h-8 w-8 transition-colors" })}
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{card.label}</p>
-                        <p className="text-lg font-black text-primary leading-none mt-1">
-                          {card.price}
-                          <span className="text-[10px] font-normal text-muted-foreground ml-0.5">{card.unit}</span>
-                        </p>
+                        <h4 className="font-bold text-primary text-xl leading-tight">{card.label}</h4>
+                        <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mt-1 opacity-60">{card.label}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-2xl font-black text-primary tracking-tighter">
+                        {card.price}
+                        <span className="text-xs font-normal text-muted-foreground/60 ml-0.5">{card.unit}</span>
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Quick Social Proof Metrics */}
+          <div className="mt-12 flex items-center justify-center gap-16 md:hidden">
+             <div className="text-center group">
+                <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">1.2k+</p>
+                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em] mt-2">Pelanggan</p>
+             </div>
+             <div className="w-px h-12 bg-primary/5" />
+             <div className="text-center group">
+                <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">4.9/5</p>
+                <div className="flex items-center justify-center gap-1.5 mt-2">
+                   <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                   <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em]">Rating</p>
+                </div>
+             </div>
           </div>
         </div>
       </div>

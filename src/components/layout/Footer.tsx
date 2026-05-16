@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">0811-3683-3131</span>-
+                <span className="text-sm text-muted-foreground">0811-3683-3131</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
@@ -100,4 +100,4 @@ export function Footer() {
       </div>
     </footer>
   );
-  -}
+}

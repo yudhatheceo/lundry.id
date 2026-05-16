@@ -42,17 +42,24 @@ export function Services() {
   return (
     <section id="layanan" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="mb-12 text-center lg:text-left">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Pilih Layanan Kami
+        <div className="mb-12 text-center">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-secondary font-black text-[10px] uppercase tracking-[0.3em] mb-3 block"
+          >
+            Layanan Unggulan
+          </motion.span>
+          <h2 className="font-heading text-3xl font-black tracking-tight text-primary sm:text-4xl">
+            Solusi Laundry <span className="text-secondary">Lengkap</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-            Dari cuci harian sampai kebutuhan bisnis, kami punya solusinya.
+          <p className="mt-4 text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Dari cuci harian sampai kebutuhan bisnis, kami punya standar kualitas yang sama tingginya.
           </p>
         </div>
 
-        {/* Mobile: Horizontal Swipe | Desktop: Grid */}
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
+        {/* Improved Grid Layout */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {SERVICES.map((service, idx) => (
             <motion.div
               key={service.title}
@@ -60,32 +67,34 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="min-w-[280px] snap-center lg:min-w-0"
             >
-              <Card className="h-full border-none bg-soft-white shadow-sm transition-shadow hover:shadow-md">
-                <CardContent className="p-8">
-                  <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm">
-                    {service.icon}
+              <Card className="h-full border-none bg-[#fbfdff] shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group rounded-2xl md:rounded-3xl overflow-hidden">
+                <CardContent className="p-5 md:p-8 flex flex-col h-full">
+                  <div className="mb-4 md:mb-6 inline-flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl md:rounded-2xl bg-white shadow-sm border border-secondary/5 group-hover:bg-secondary group-hover:text-white transition-colors">
+                    {React.cloneElement(service.icon as React.ReactElement, { className: "h-6 w-6 md:h-8 md:w-8" })}
                   </div>
-                  <h3 className="mb-3 text-xl font-bold text-primary">
+                  
+                  <h3 className="mb-2 text-base md:text-xl font-black text-primary group-hover:text-secondary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="mb-6 text-sm text-muted-foreground leading-relaxed">
+                  
+                  <p className="text-[10px] md:text-sm text-muted-foreground leading-relaxed flex-grow">
                     {service.description}
                   </p>
-                  
-                  <ul className="space-y-3">
+
+                  {/* Items List - Only visible on Tablet/Desktop for cleanliness */}
+                  <ul className="mt-6 space-y-2 hidden md:block">
                     {service.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-primary/80">
-                        <CheckCircle2 className="h-4 w-4 text-secondary" />
+                      <li key={item} className="flex items-center gap-2 text-xs text-primary/70">
+                        <div className="h-1 w-1 rounded-full bg-secondary" />
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-8">
-                    <button className="text-sm font-bold text-secondary transition-colors hover:text-primary">
-                      Lihat Detail →
+                  <div className="mt-6 md:mt-8 pt-4 border-t border-secondary/5">
+                    <button className="text-[10px] md:text-xs font-black text-secondary uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Pesan <span className="hidden md:inline">Sekarang</span> →
                     </button>
                   </div>
                 </CardContent>

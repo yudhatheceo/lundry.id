@@ -15,18 +15,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lundry.id'),
-  title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
-  description: "Layanan laundry modern di Jember dengan standar kualitas hotel. Regular, Express, dan 3 Jam Kilat. Pickup & antar tersedia langsung dari HP kamu.",
+  title: "Laundry Express Jember | LUNDRY.id",
+  description: "LUNDRY.id Laundry Express 3 Jam Selesai di Jember. Standar Bintang 5, harga mahasiswa.",
   openGraph: {
-    title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
-    description: "Layanan laundry modern di Jember. Standar hotel, parfum premium, & pickup terjadwal.",
+    title: "Laundry Express Jember | LUNDRY.id",
+    description: "LUNDRY.id Laundry Express 3 Jam Selesai di Jember. Standar Bintang 5, harga mahasiswa.",
     images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LUNDRY.id — Cuci & Setrika Tanpa Ribet",
-    description: "Layanan laundry modern Jember. Standar hotel, parfum premium, & pickup terjadwal.",
+    title: "LUNDRY.id | Laundry Express Jember",
+    description: "LUNDRY.id Laundry Express 3 Jam Selesai di Jember. Standar Bintang 5, harga mahasiswa.",
     images: ["/logo.webp"],
   }
 };

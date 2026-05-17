@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Clock, 
-  Bell, 
+import {
+  ShieldCheck,
+  Clock,
+  Bell,
   Truck,
   Sparkles,
   CheckCircle2,
@@ -14,7 +14,7 @@ import {
 
 const METRICS = [
   { label: "Notifikasi Real-Time", value: "Live", icon: <Bell className="h-5 w-5" /> },
-  { label: "Standar Kualitas", value: "Hotel", icon: <ShieldCheck className="h-5 w-5" /> },
+  { label: "Standar Kualitas", value: "Bintang 5", icon: <ShieldCheck className="h-5 w-5" /> },
   { label: "Pickup & Antar", value: "Pasti", icon: <Truck className="h-5 w-5" /> },
   { label: "Custom Parfum", value: "Gratis", icon: <Sparkles className="h-5 w-5" /> },
 ];

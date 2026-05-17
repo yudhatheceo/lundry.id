@@ -30,7 +30,7 @@ export function Testimonials() {
               <div className="lg:col-span-2 bg-primary rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
                 {/* Abstract decoration inside the inner frame */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -42,10 +42,10 @@ export function Testimonials() {
                     Early Bird Perks
                   </div>
                   <h2 className="text-3xl md:text-4xl font-black leading-tight mb-6">
-                    Jadilah 100 Orang Pertama di Jember!
+                    Jadilah 500 Orang Pertama di Jember!
                   </h2>
                   <p className="text-white/70 text-sm md:text-base mb-10 leading-relaxed">
-                    Kami segera buka di area Kampus Mastrip. Daftar waitlist sekarang dan nikmati privilege khusus yang tidak didapatkan pelanggan lain.
+                    Gabung sekarang juga! Jadi member pertama LUNDRY.id dan nikmati privillege khusus. Kuota terbatas, jangan sampai kehabisan!
                   </p>
 
                   <div className="space-y-6">
@@ -80,28 +80,28 @@ export function Testimonials() {
                     viewport={{ once: true }}
                   >
                     <div className="mb-10">
-                      <h3 className="text-2xl md:text-3xl font-black text-primary mb-3">Amankan Slot Anda</h3>
+                      <h3 className="text-2xl md:text-3xl font-black text-primary mb-3">Gabung Sekarang!  </h3>
                       <div className="flex items-center gap-2 text-red-500 font-bold text-[11px] uppercase tracking-wider">
                         <Timer className="h-4 w-4 animate-pulse" />
-                        Hanya tersisa 42 slot lagi!
+                        Kuota Terbatas! 500 Slot Pertama!
                       </div>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nama Lengkap</label>
-                        <Input 
-                          placeholder="Contoh: Budi Santoso" 
-                          required 
+                        <Input
+                          placeholder="Nala Larasati"
+                          required
                           className="h-12 bg-soft-white border-border/50 focus:border-secondary rounded-xl"
                         />
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nomor WhatsApp</label>
-                        <Input 
-                          type="tel" 
-                          placeholder="0811xxxxxxx" 
-                          required 
+                        <Input
+                          type="tel"
+                          placeholder="0811xxxxxxx"
+                          required
                           className="h-12 bg-soft-white border-border/50 focus:border-secondary rounded-xl"
                         />
                       </div>
@@ -116,7 +116,7 @@ export function Testimonials() {
                     </form>
                   </motion.div>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-10"
@@ -128,8 +128,8 @@ export function Testimonials() {
                     <p className="text-muted-foreground text-sm leading-relaxed mb-8">
                       Terima kasih sudah bergabung. Kami telah mencatat nomor Anda. Siap-siap dapet kejutan wangi dari LUNDRY.id!
                     </p>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       onClick={() => setIsSubmitted(false)}
                       className="rounded-xl font-bold text-xs"
                     >
@@ -140,17 +140,17 @@ export function Testimonials() {
               </div>
             </div>
           </div>
-          
+
           {/* Trust Indicators for Waitlist */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-             <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-xs font-black uppercase tracking-tighter text-primary">Trusted by The Beacon</span>
-             </div>
-             <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-xs font-black uppercase tracking-tighter text-primary">PT Nawasena Group</span>
-             </div>
+            <div className="flex items-center gap-2">
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-xs font-black uppercase tracking-tighter text-primary">Trusted by The Beacon</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-xs font-black uppercase tracking-tighter text-primary">PT Nawasena Group</span>
+            </div>
           </div>
         </div>
       </div>

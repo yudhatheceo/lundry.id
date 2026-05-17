@@ -39,8 +39,8 @@ export function Hero() {
         {/* Banner Image with Multi-layer Masking */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.webp" 
-            alt="LUNDRY.id Premium Service"
+            src="/hero.webp"
+            alt="LUNDRY.id Laundry Express Jember"
             fill
             sizes="100vw"
             className="object-cover object-top"
@@ -68,19 +68,19 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               className="font-heading text-4xl font-black tracking-tight text-white sm:text-7xl leading-[1.1] drop-shadow-lg"
             >
-              Laundry Modern <br />
-              <span className="text-secondary">Segera Hadir</span>
+              Laundry Express <br />
+              <span className="text-secondary">Segera Hadir di Jember</span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
               className="mt-6 text-base md:text-lg text-white/80 max-w-md leading-relaxed font-medium"
             >
-              Kami sedang menyiapkan ekosistem laundry terbaik dengan standar hotel khusus untuk area Kampus Mastrip & Jember Kota.
+              Laundry Express 3 Jam kualitas bintang lima harga mahasiswa, segera hadir area Kampus Mastrip & Jember Kota.
               <br className="hidden md:block" />
-              <span className="text-secondary font-bold">Daftar sekarang untuk promo launching!</span>
+              <span className="text-secondary font-bold"> Dapatkan diskon 50% untuk 500 orang pertama!</span>
             </motion.p>
 
             <motion.div
@@ -89,16 +89,16 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
                 className="h-14 rounded-full font-bold text-sm px-10 bg-secondary hover:bg-secondary/90 text-white shadow-md border-none transition-all hover:scale-[1.02] active:scale-95"
               >
-                Dapatkan Akses Awal
+                Jadi member pertama
                 <Zap className="ml-2 h-4 w-4 fill-white" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+ingin+tanya+kapan+bukanya", "_blank")}
                 className="h-14 rounded-full font-bold text-sm px-10 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white shadow-md border border-white/20 transition-all hover:scale-[1.02] active:scale-95"
               >
@@ -146,18 +146,18 @@ export function Hero() {
 
           {/* Quick Social Proof Metrics */}
           <div className="mt-12 flex items-center justify-center gap-16 md:hidden">
-             <div className="text-center group">
-                <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">1.2k+</p>
-                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em] mt-2">Pelanggan</p>
-             </div>
-             <div className="w-px h-12 bg-primary/5" />
-             <div className="text-center group">
-                <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">4.9/5</p>
-                <div className="flex items-center justify-center gap-1.5 mt-2">
-                   <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                   <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em]">Rating</p>
-                </div>
-             </div>
+            <div className="text-center group">
+              <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">1.2k+</p>
+              <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em] mt-2">Pelanggan</p>
+            </div>
+            <div className="w-px h-12 bg-primary/5" />
+            <div className="text-center group">
+              <p className="text-3xl font-black text-primary group-hover:text-secondary transition-colors">4.9/5</p>
+              <div className="flex items-center justify-center gap-1.5 mt-2">
+                <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em]">Rating</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

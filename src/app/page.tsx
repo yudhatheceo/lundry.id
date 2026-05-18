@@ -6,7 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { Pricing } from "@/components/sections/Pricing";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TrustBadges } from "@/components/sections/TrustBadges";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { Waitlist } from "@/components/sections/Waitlist";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { Partnership } from "@/components/sections/Partnership";
 import { Products } from "@/components/sections/Products";
@@ -18,7 +18,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Testimonials />
+      <Waitlist />
       <Services />
       <Products />
       <Pricing />

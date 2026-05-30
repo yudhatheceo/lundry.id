@@ -363,10 +363,10 @@ Modul pelacakan kurir memanfaatkan pemindaian barcode fisik QR Bag laundry. Keti
     ```javascript
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
-      // Tembakkan ke API bags/scan
+      // Tembakkan ke API /v1/courier/scan
     });
     ```
-4.  Kirim payload ke endpoint `POST /api/bags/scan` dengan data koordinat GPS desimal.
+4.  Kirim payload ke endpoint `POST /v1/courier/scan` (relative terhadap `baseURL: /api`) dengan data koordinat GPS desimal.
 5.  Backend secara otomatis mencatat audit trail log GPS kurir, memicu perubahan status kantong laundry, dan memicu perubahan status order induk menjadi `processing` secara cerdas!
 
 ---
@@ -380,9 +380,9 @@ Modul pelacakan kurir memanfaatkan pemindaian barcode fisik QR Bag laundry. Keti
     Semua timestamp yang dikembalikan dari backend menggunakan format standar **ISO 8601 UTC** (`YYYY-MM-DDTHH:mm:ss.SSSSSSZ`).
     *   *Rekomendasi*: Gunakan library ringan seperti `dayjs` atau `date-fns` di frontend untuk mengubah tanggal tersebut ke format ramah lokal pengguna (misal: `DD MMMM YYYY, HH:mm` WIB).
 3.  **CORS & Subdomain Routing**:
-    Keamanan CORS dikunci ketat demi keamanan data POS. Pastikan aplikasi Next.js monorepo berjalan pada origin yang diizinkan (Allowed Origins), seperti:
-    *   `http://localhost:3000` (POS Kasir / Admin)
-    *   `http://mitra.localhost:3000` (Portal Drop Point Mitra)
-    *   `http://app.localhost:3000` (Kurir & Pelanggan Mobile Web)
+    Keamanan CORS dikunci ketat demi keamanan data POS. Pastikan aplikasi Next.js monorepo berjalan pada origin yang diizinkan (Allowed Origins) sesuai dengan routing Next.js Middleware:
+    *   `http://localhost:3000` (Landing Page Utama & Customer Portal)
+    *   `http://app.localhost:3000` (POS Kasir, ERP Admin, Kurir, & QR Scanner)
+    *   `http://mitra.localhost:3000` (POS Drop Point Mitra)
 4.  **Batas Void H+0**:
     Jika tombol "Void Order" ditekan oleh Kasir, pastikan tombol tersebut dinonaktifkan atau melempar konfirmasi jika tanggal pembuatan order berbeda dengan hari ini, karena backend mengunci audit pembatalan hanya berlaku pada **Hari Transaksi yang Sama (H+0)**.

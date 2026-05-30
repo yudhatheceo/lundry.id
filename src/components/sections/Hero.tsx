@@ -31,7 +31,11 @@ const PRICING_CARDS = [
   },
 ];
 
-export function Hero() {
+interface HeroProps {
+  onOpenWaitlist: () => void;
+}
+
+export function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Top Banner: Cinematic Overlay Experience */}
@@ -91,7 +95,7 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={onOpenWaitlist}
                 className="h-14 rounded-full font-bold text-sm px-10 bg-secondary hover:bg-secondary/90 text-white shadow-md border-none transition-all hover:scale-[1.02] active:scale-95"
               >
                 Jadi member pertama

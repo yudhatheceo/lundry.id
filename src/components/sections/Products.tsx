@@ -12,21 +12,21 @@ const PRODUCTS = [
     desc: "Formula higienis, wangi tahan lama, aman untuk semua jenis bahan pakaian.",
     price: "Mulai 25rb",
     icon: <Droplets className="h-6 w-6" />,
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=300&h=200&auto=format&fit=crop",
+    image: "/images/deterjen.png",
   },
   {
     title: "Pewangi Laundry Konsentrat",
     desc: "Varian eksklusif LUNDRY.id. Aroma hotel bintang 5 yang bisa kamu pakai di rumah.",
     price: "Mulai 45rb",
     icon: <FlaskConical className="h-6 w-6" />,
-    image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=300&h=200&auto=format&fit=crop",
+    image: "/images/pewangi.png",
   },
   {
     title: "Peralatan Laundry Industri",
     desc: "Mesin cuci, setrika uap, hingga troli. Kualitas yang kami pakai di outlet kami.",
     price: "Hubungi Kami",
     icon: <Hammer className="h-6 w-6" />,
-    image: "https://images.unsplash.com/photo-1545173153-5dd9a6159a24?q=80&w=300&h=200&auto=format&fit=crop",
+    image: "/images/peralatan.png",
   },
 ];
 

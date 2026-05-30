@@ -43,7 +43,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-primary mb-6">Navigasi</h4>
             <ul className="space-y-4">
-              {["Layanan", "Harga", "Cara Kerja", "Testimoni", "Kemitraan"].map((item) => (
+              {["Layanan", "Harga", "Cara Kerja", "FAQ", "Kemitraan"].map((item) => (
                 <li key={item}>
                   <Link href={`#${item.toLowerCase().replace(" ", "-")}`} className="text-sm text-muted-foreground hover:text-secondary transition-colors">
                     {item}

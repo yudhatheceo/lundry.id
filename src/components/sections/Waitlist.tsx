@@ -7,15 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export function Waitlist() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+interface WaitlistProps {
+  onOpenWaitlist: () => void;
+}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Placeholder for n8n integration
-    setIsSubmitted(true);
-  };
-
+export function Waitlist({ onOpenWaitlist }: WaitlistProps) {
   return (
     <section id="waitlist" className="py-24 bg-[#fbfdff] overflow-hidden relative">
       {/* Background Decorative Elements */}
@@ -71,72 +67,62 @@ export function Waitlist() {
                 </motion.div>
               </div>
 
-              {/* Form Side - 3/5 width */}
-              <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-white">
-                {!isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="mb-10">
-                      <h3 className="text-2xl md:text-3xl font-black text-primary mb-3">Gabung Sekarang!  </h3>
-                      <div className="flex items-center gap-2 text-red-500 font-bold text-[11px] uppercase tracking-wider">
-                        <Timer className="h-4 w-4 animate-pulse" />
-                        Kuota Terbatas! 500 Slot Pertama!
-                      </div>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nama Lengkap</label>
-                        <Input
-                          placeholder="Nala Larasati"
-                          required
-                          className="h-12 bg-soft-white border-border/50 focus:border-secondary rounded-xl"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nomor WhatsApp</label>
-                        <Input
-                          type="tel"
-                          placeholder="0811xxxxxxx"
-                          required
-                          className="h-12 bg-soft-white border-border/50 focus:border-secondary rounded-xl"
-                        />
-                      </div>
-                      <Button type="submit" className="w-full h-14 rounded-xl font-bold bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/10 transition-all hover:scale-[1.01] active:scale-95 mt-6">
-                        Gabung Waitlist Sekarang
-                        <Send className="ml-2 h-4 w-4" />
-                      </Button>
-                      <p className="text-[10px] text-center text-muted-foreground mt-8 leading-relaxed italic">
-                        *Kami akan mengirimi Anda pesan saat kami resmi dibuka. <br className="hidden md:block" />
-                        Tenang, tidak ada spam. Hanya voucher dan update penting.
-                      </p>
-                    </form>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-10"
-                  >
-                    <div className="h-20 w-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Gift className="h-10 w-10" />
-                    </div>
-                    <h3 className="text-2xl font-black text-primary mb-2">Berhasil Terdaftar!</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-                      Terima kasih sudah bergabung. Kami telah mencatat nomor Anda. Siap-siap dapet kejutan wangi dari LUNDRY.id!
+              {/* Form Side - 3/5 width (Replaced with CTA) */}
+              <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-white relative">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="space-y-8"
+                >
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-secondary bg-secondary/5 border border-secondary/10 px-3 py-1 rounded-full">
+                      Kuota Terbatas
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-black text-primary mt-6 mb-3">
+                      Amankan Slot Prioritas Anda!
+                    </h3>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                      Dapatkan keuntungan eksklusif Early Bird LUNDRY.id sebelum kuota pendaftaran 500 member pertama terisi penuh. 
                     </p>
-                    <Button
-                      variant="outline"
-                      onClick={() => setIsSubmitted(false)}
-                      className="rounded-xl font-bold text-xs"
+                  </div>
+
+                  {/* Progress Slots Indicator */}
+                  <div className="bg-slate-50 dark:bg-white/5 p-5 rounded-2xl border border-slate-100 dark:border-white/5 space-y-3">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-bold text-primary">Slot Waitlist Terisi</span>
+                      <span className="font-black text-secondary uppercase tracking-widest text-[10px]">
+                        82% Terisi (412 / 500)
+                      </span>
+                    </div>
+                    <div className="h-2.5 w-full bg-slate-200/60 dark:bg-white/10 rounded-full overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "82.4%" }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="h-full bg-secondary rounded-full"
+                      />
+                    </div>
+                    <p className="text-[10px] text-slate-400 italic">
+                      *Slot tersisa diperbarui otomatis secara real-time.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <Button 
+                      onClick={onOpenWaitlist}
+                      className="w-full h-16 rounded-2xl font-black text-xs uppercase tracking-widest bg-secondary hover:bg-secondary/90 text-white shadow-xl shadow-secondary/25 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 group"
                     >
-                      Daftarkan Nomor Lain
+                      Gabung Waitlist Sekarang
+                      <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
-                  </motion.div>
-                )}
+                    
+                    <div className="flex items-center justify-center gap-2 text-[10px] text-muted-foreground">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Proses cepat kurang dari 30 detik · Bebas spam
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>

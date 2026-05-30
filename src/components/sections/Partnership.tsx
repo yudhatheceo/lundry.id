@@ -117,7 +117,11 @@ export function Partnership() {
                     </div>
                   )}
 
-                  <Button variant="link" className="mt-auto p-0 h-auto font-black text-[10px] uppercase tracking-widest text-secondary justify-start hover:text-primary transition-all">
+                  <Button 
+                    variant="link" 
+                    onClick={() => window.open("https://wa.me/628113683131?text=Halo+LUNDRY.id+saya+tertarik+dengan+program+" + encodeURIComponent(type.title), "_blank")}
+                    className="mt-auto p-0 h-auto font-black text-[10px] uppercase tracking-widest text-secondary justify-start hover:text-primary transition-all"
+                  >
                     {type.cta} →
                   </Button>
                 </CardContent>

@@ -14,10 +14,14 @@ import { Partnership } from "@/components/sections/Partnership";
 import { Products } from "@/components/sections/Products";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/layout/Footer";
+import { WaitlistModal } from "@/components/modals/WaitlistModal";
+import { PublicTracker } from "@/components/sections/PublicTracker";
 
 export default function Home() {
   const router = useRouter();
-  const [isSubdomainRedirecting, setIsSubdomainRedirecting] = useState(true);
+  // Only enable subdomain redirect when a mock_host param is explicitly provided
+  const [isSubdomainRedirecting, setIsSubdomainRedirecting] = useState(false);
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -25,27 +29,43 @@ export default function Home() {
       const searchParams = new URLSearchParams(window.location.search);
       const mockHost = searchParams.get("mock_host");
 
-      // Check for App Subdomain
-      const isApp = 
+      // If no mock_host query, we stay on landing page
+      if (!mockHost) {
+        setIsSubdomainRedirecting(false);
+        return;
+      }
+
+      const isApp =
         mockHost === "app" ||
-        hostname.startsWith("app.localhost") || 
-        hostname.startsWith("app.lundry.id") || 
+        hostname.startsWith("app.localhost") ||
+        hostname.startsWith("app.lundry.id") ||
         hostname.startsWith("dev.app.lundry.id");
 
-      // Check for Mitra Subdomain
-      const isMitra = 
+      const isMitra =
         mockHost === "mitra" ||
-        hostname.startsWith("mitra.localhost") || 
-        hostname.startsWith("mitra.lundry.id") || 
+        hostname.startsWith("mitra.localhost") ||
+        hostname.startsWith("mitra.lundry.id") ||
         hostname.startsWith("dev.mitra.lundry.id");
 
-      if (isApp) {
-        router.replace("/app");
-      } else if (isMitra) {
-        router.replace("/mitra");
-      } else {
-        setIsSubdomainRedirecting(false);
-      }
+      const isCustomer =
+        mockHost === "customer" ||
+        hostname.startsWith("customer.localhost") ||
+        hostname.startsWith("customer.lundry.id") ||
+        hostname.startsWith("dev.customer.lundry.id");
+
+        const currentPath = window.location.pathname;
+        if (isApp && currentPath !== "/app") {
+          setIsSubdomainRedirecting(true);
+          router.replace("/app");
+        } else if (isMitra && currentPath !== "/mitra") {
+          setIsSubdomainRedirecting(true);
+          router.replace("/mitra");
+        } else if (isCustomer && currentPath !== "/customer") {
+          setIsSubdomainRedirecting(true);
+          router.replace("/customer");
+        } else {
+          setIsSubdomainRedirecting(false);
+        }
     }
   }, [router]);
 
@@ -60,11 +80,16 @@ export default function Home() {
     );
   }
 
+  const handleOpenWaitlist = () => {
+    setIsWaitlistModalOpen(true);
+  };
+
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Waitlist />
+    <main className="min-h-screen overflow-x-hidden">
+      <Navbar onOpenWaitlist={handleOpenWaitlist} />
+      <Hero onOpenWaitlist={handleOpenWaitlist} />
+      <Waitlist onOpenWaitlist={handleOpenWaitlist} />
+      <PublicTracker />
       <Services />
       <Products />
       <Pricing />
@@ -74,6 +99,7 @@ export default function Home() {
       <Partnership />
       <FAQ />
       <Footer />
+      <WaitlistModal isOpen={isWaitlistModalOpen} onClose={() => setIsWaitlistModalOpen(false)} />
     </main>
   );
 }

@@ -15,7 +15,11 @@ const NAV_LINKS = [
   { label: "Kemitraan", href: "#kemitraan" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenWaitlist: () => void;
+}
+
+export function Navbar({ onOpenWaitlist }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -47,7 +51,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button className="font-semibold" size="sm">
+            <Button className="font-semibold" size="sm" onClick={onOpenWaitlist}>
               Pesan Sekarang
             </Button>
           </div>
@@ -77,7 +81,11 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-4">
-              <Button className="w-full font-bold" size="lg">
+              <Button 
+                onClick={() => { setIsOpen(false); onOpenWaitlist(); }}
+                className="w-full font-bold" 
+                size="lg"
+              >
                 Pesan Sekarang
               </Button>
             </div>
